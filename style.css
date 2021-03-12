@@ -10,9 +10,17 @@
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
+@font-face {
+    font-family: 'FontBold';
+    src:  url('media/font-bold.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'FontStenc';
+    src:  url('media/font-stencil.woff2') format('woff2');
+  }
 
 html{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'FontStenc';
 }
 
 .title{
@@ -54,5 +62,49 @@ html{
     }
     .secondary-text{
         grid-column-start: 2;
+    }
+}
+
+.second-container .card-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+
+
+.card{
+    padding: 2rem;
+    
+}
+.card-title{
+    font-family: 'FontBold';
+    font-size: 2rem;
+}
+.a1{
+    grid-column-start: 2;
+}
+
+@media screen and (max-width:800px){
+    .second-container .card-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        margin-left: 1rem;
+    }
+    .a1{
+        grid-column-start: 1;
+    }
+}
+
+@media screen and (max-width:400px){
+    .second-container .card-container{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: 1fr;
+        margin-left: 1rem;
+    }
+    .a1{
+        grid-column-start: 1;
     }
 }
